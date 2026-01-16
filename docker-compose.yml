@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: carbon-tracker-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./carbon_tracker.db
+      - CORS_ORIGINS=http://localhost:3000,http://localhost:8080,http://localhost
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/app:/app/app
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: carbon-tracker-frontend
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000/api/v1
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  backend-data:
