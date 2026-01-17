@@ -1,0 +1,125 @@
+.recommendations-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations-container h3 {
+  color: #2d3748;
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.recommendation-card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-left: 5px solid;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.recommendation-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.recommendation-card.unread {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+}
+
+.rec-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.rec-icon {
+  font-size: 1.5em;
+}
+
+.rec-category {
+  font-weight: 700;
+  font-size: 0.85em;
+  letter-spacing: 0.5px;
+}
+
+.new-badge {
+  background: #f56565;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.7em;
+  font-weight: 700;
+  margin-left: auto;
+}
+
+.rec-text {
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 15px 0;
+  font-size: 0.95em;
+}
+
+.rec-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.savings {
+  font-size: 0.85em;
+  color: #48bb78;
+  font-weight: 600;
+}
+
+.mark-read-btn {
+  background: #48bb78;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.mark-read-btn:hover {
+  background: #38a169;
+  transform: scale(1.1);
+}
+
+.no-recommendations {
+  text-align: center;
+  color: #a0aec0;
+  font-size: 1.1em;
+  padding: 40px 20px;
+}
+
+@media (max-width: 768px) {
+  .recommendations-container {
+    padding: 20px;
+  }
+
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+}
